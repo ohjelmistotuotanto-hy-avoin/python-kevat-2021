@@ -1,4 +1,3 @@
-from statistics import Statistics
 import unittest
 from varasto import Varasto
 
@@ -58,4 +57,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

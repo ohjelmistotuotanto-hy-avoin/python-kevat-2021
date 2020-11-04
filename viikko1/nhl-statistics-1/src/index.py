@@ -14,4 +14,6 @@ def main():
     for player in top_scorers:
         print(player)
 
-main()
+
+if __name__ == '__main__':
+    main()

@@ -1,21 +1,30 @@
 {% extends "layout.html" %}
 {% block body %}
 <h1>Counter: {{value}}</h1>
-  <form action="/increase" method="POST">
+  <form action="/increase" method="post">
     <button>
       Increase
     </button>
   </form>
 
-  <form action="/decrease" method="POST">
+  <form action="/decrease" method="post">
     <button>
       Decrease
     </button>
   </form>
 
-  <form action="/reset" method="POST">
+  <form action="/reset" method="post">
     <button>
       Reset
+    </button>
+  </form>
+
+  <form action="/set-value" method="post">
+    <label for="value">Value</label>
+    <input type="text" name="value" id="value" />
+
+    <button>
+      Set value
     </button>
   </form>
 {% endblock %}

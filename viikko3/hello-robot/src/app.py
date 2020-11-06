@@ -2,13 +2,21 @@ from flask import (
     Flask,
     render_template,
     redirect,
-    url_for
+    url_for,
+    request
 )
 
 from counter import Counter
 
 app = Flask("counter")
 counter = Counter()
+
+
+def safe_int(value):
+    try:
+        return int(value)
+    except ValueError:
+        return None
 
 
 def redirect_to_counter():
@@ -35,6 +43,17 @@ def decrease():
 @app.route("/reset", methods=["POST"])
 def reset():
     counter.reset()
+    return redirect_to_counter()
+
+
+@app.route("/set-value", methods=["POST"])
+def set_value():
+    value = request.form.get("value")
+    int_value = safe_int(value)
+
+    if int_value:
+        counter.value = int_value
+
     return redirect_to_counter()
 
 

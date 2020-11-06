@@ -18,10 +18,17 @@ Open Browser To Counter Page
 Counter Page Should Be Open
     Title Should Be  Counter
 
+Go To Counter Page
+    Go To  ${COUNTER URL}
+    Counter Page Should Be Open
+
+Reset And Go To Counter Page
+    Reset
+    Go To Counter Page
+
 Counter Value Should Be
     [Arguments]  ${value}
     Page Should Contain  Counter: ${value} 
 
 Reset
-    Open Browser  ${RESET URL}  ${BROWSER}
-    Close Browser
+    Go To  ${RESET URL}

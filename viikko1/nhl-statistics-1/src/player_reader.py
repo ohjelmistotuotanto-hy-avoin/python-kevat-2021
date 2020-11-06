@@ -4,12 +4,13 @@ from player import Player
 
 class PlayerReader:
     def __init__(self, url):
-        self.file = request.urlopen(url)
+        self.url = url
 
     def get_players(self):
+        players_file = request.urlopen(self.url)
         players = []
 
-        for line in self.file:
+        for line in players_file:
             decoded_line = line.decode("utf-8")
             parts = decoded_line.split(";")
 

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Counter: {{value}}</h1>
+  <form action="/increase" method="POST">
+    <button>
+      Increase
+    </button>
+  </form>
+
+  <form action="/decrease" method="POST">
+    <button>
+      Decrease
+    </button>
+  </form>
+
+  <form action="/reset" method="POST">
+    <button>
+      Reset
+    </button>
+  </form>
+{% endblock %}

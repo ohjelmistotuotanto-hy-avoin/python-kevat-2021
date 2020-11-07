@@ -14,8 +14,8 @@ ${TEST USER USERNAME}  johndoe
 ${TEST USER PASSWORD}  secret
 
 *** Keywords ***
-Open Browser To Home Page
-    Open Browser  ${HOME URL}  ${BROWSER}
+Open And Configure Browser
+    Open Browser  browser=${BROWSER}
     Maximize Browser Window
     Set Selenium Speed  ${DELAY}
 

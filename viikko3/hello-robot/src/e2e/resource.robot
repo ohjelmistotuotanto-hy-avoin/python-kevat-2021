@@ -9,8 +9,8 @@ ${COUNTER URL}  http://${SERVER}/
 ${RESET URL}  http://${SERVER}/tests/reset
 
 *** Keywords ***
-Open Browser To Counter Page
-    Open Browser  ${COUNTER URL}  ${BROWSER}
+Open And Configure Browser
+    Open Browser  browser=${BROWSER}
     Maximize Browser Window
     Set Selenium Speed  ${DELAY}
 

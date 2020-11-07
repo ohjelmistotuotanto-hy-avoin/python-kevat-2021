@@ -1,5 +1,5 @@
 *** Settings ***
-Suite Setup  Open Browser To Home Page
+Suite Setup  Open And Configure Browser
 Suite Teardown  Close Browser
 Test Setup  Reset And Go To Home Page
 Resource  resource.robot

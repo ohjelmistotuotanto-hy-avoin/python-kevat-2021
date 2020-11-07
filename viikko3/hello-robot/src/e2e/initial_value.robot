@@ -6,4 +6,5 @@ Resource  resource.robot
 
 *** Test Cases ***
 Counter Initial Value
+    Counter Page Should Be Open
     Counter Value Should Be  0

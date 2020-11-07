@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Todos
+{% endblock %}
+
+{% block body %}
+<h1>{{user.username}}'s todos</h1>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<form action="/logout" method="post">
+  <button>Logout</button>
+</form>
+
+<h2>Create a todo</h2>
+
+<form action="/todos" method="post">
+  <div>
+    <label for="content">Content</label>
+    <input type="text" name="content" id="content" />
+  </div>
+
+  <button>
+    Create
+  </button>
+</form>
+
+<h2>Todos ({{todos_count}})</h2>
+
+<ul>
+{% for todo in todos %}
+  <li>
+    {{todo.content}}
+    <form action="/todos/{{todo.id}}/delete" method="post">
+      <button>Remove</button>
+    </form>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -13,14 +13,12 @@ Open Browser To Counter Page
     Open Browser  ${COUNTER URL}  ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed  ${DELAY}
-    Counter Page Should Be Open
 
 Counter Page Should Be Open
     Title Should Be  Counter
 
 Go To Counter Page
     Go To  ${COUNTER URL}
-    Counter Page Should Be Open
 
 Reset And Go To Counter Page
     Reset

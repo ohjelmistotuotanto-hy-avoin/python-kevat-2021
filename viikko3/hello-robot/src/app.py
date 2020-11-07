@@ -8,7 +8,7 @@ from flask import (
 
 from counter import Counter
 
-app = Flask("counter")
+app = Flask(__name__)
 counter = Counter()
 
 
@@ -56,7 +56,12 @@ def set_value():
 
     return redirect_to_counter()
 
+# tämän avulla voi tarkastaa onko palvelin käynnissä
+@app.route("/ping")
+def ping():
+    return "pong"
 
+# sovelluksen tilan alustaminen testejä varten
 @app.route("/tests/reset")
 def reset_tests():
     counter.reset()

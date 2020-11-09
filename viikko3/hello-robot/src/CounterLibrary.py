@@ -1,5 +1,6 @@
 from counter import Counter
 
+
 class CounterLibrary:
     def __init__(self):
         self._counter = Counter()

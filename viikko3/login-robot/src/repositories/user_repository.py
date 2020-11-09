@@ -45,4 +45,3 @@ class UserRepository:
 
     def delete_all(self):
         self.users = []
-

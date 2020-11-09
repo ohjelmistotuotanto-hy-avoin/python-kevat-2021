@@ -4,7 +4,7 @@ Test Setup  Create User And Input Login Command
 
 *** Test Cases ***
 Login With Correct Credentials
-    Input Username And Password  kalle  kalle123
+    Input Credentials  kalle  kalle123
     Output Should Contain  Logged in
 
 *** Keywords ***

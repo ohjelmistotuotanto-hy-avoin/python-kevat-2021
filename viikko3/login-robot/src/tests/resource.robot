@@ -5,7 +5,7 @@ Library  ../AppLibrary.py
 Input Login Command
     Input  login
 
-Input Username And Password
+Input Credentials
     [Arguments]  ${username}  ${password}
     Input  ${username}
     Input  ${password}

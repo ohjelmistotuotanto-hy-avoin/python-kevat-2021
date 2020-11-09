@@ -1,6 +1,6 @@
 *** Settings ***
 Resource  resource.robot
-Test Setup  Create User Input Login Command
+Test Setup  Create User And Input Login Command
 
 *** Test Cases ***
 Login With Correct Credentials
@@ -8,6 +8,6 @@ Login With Correct Credentials
     Output Should Contain  Logged in
 
 *** Keywords ***
-Create User Input Login Command
+Create User And Input Login Command
     Create User  kalle  kalle123
     Input Login Command

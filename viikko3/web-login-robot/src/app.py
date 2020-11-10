@@ -13,6 +13,7 @@ from services.user_service import user_service
 app = Flask(__name__)
 app.secret_key = "MXRg2upmZGaSR~2nMaGmiwW0o.lg_w"
 
+
 def redirect_to_login():
     return redirect(url_for("render_login"))
 
@@ -23,6 +24,7 @@ def redirect_to_welcome():
 
 def redirect_to_register():
     return redirect(url_for("render_register"))
+
 
 def redirect_to_ohtu():
     return redirect(url_for("render_ohtu"))
@@ -75,9 +77,10 @@ def render_register():
 def handle_register():
     username = request.form.get("username")
     password = request.form.get("password")
+    password_confirmation = request.form.get("password_confirmation")
 
     try:
-        user_service.create_user(username, password)
+        user_service.create_user(username, password, password_confirmation)
         return redirect_to_welcome()
     except Exception as error:
         flash(str(error))

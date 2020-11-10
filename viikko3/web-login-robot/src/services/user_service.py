@@ -27,8 +27,8 @@ class UserService:
 
         return user
 
-    def create_user(self, username, password):
-        self.validate(username, password)
+    def create_user(self, username, password, password_confirmation):
+        self.validate(username, password, password_confirmation)
 
         user = self.user_repository.create(
             User(username, password)
@@ -36,7 +36,7 @@ class UserService:
 
         return user
 
-    def validate(self, username, password):
+    def validate(self, username, password, password_confirmation):
         if not username or not password:
             raise UserInputError("Username and password are required")
 

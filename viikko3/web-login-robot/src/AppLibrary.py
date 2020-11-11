@@ -13,7 +13,8 @@ class AppLibrary:
     def create_user(self, username, password):
         data = {
             "username": username,
-            "password": password
+            "password": password,
+            "password_confirmation": password
         }
 
         requests.post(f"{self._base_url}/register", data=data)

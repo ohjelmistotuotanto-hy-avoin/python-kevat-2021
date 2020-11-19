@@ -6,12 +6,8 @@ def sort_by_points(player):
 
 
 class Statistics:
-    def __init__(self):
-        reader = PlayerReader(
-            "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
-        )
-
-        self.players = reader.get_players()
+    def __init__(self, player_reader):
+        self.players = player_reader.get_players()
 
     def search(self, name):
         for player in self.players:
@@ -36,3 +32,11 @@ class Statistics:
         )
 
         return sorted_players[:how_many]
+
+    def matches(self, matcher):
+        matching_players = filter(
+            lambda player: matcher.matches(player),
+            self.players
+        )
+
+        return list(matching_players)

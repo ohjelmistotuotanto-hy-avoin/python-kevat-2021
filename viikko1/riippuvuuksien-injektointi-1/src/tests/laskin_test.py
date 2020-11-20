@@ -20,4 +20,4 @@ class TestLaskin(unittest.TestCase):
         laskin = Laskin(io)
         laskin.suorita()
 
-        self.assertEqual(io.outputs[0], f"Summa: 4")
+        self.assertEqual(io.outputs[0], "Summa: 4")

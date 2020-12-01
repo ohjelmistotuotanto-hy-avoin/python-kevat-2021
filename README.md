@@ -1,3 +1,3 @@
 # Kevät 2021
 
-Laskareissa käytettävä koodi.
+Laskareissa käytettävä Python-koodi.

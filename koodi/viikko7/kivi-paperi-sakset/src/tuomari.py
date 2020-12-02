@@ -28,7 +28,7 @@ class Tuomari:
         if self.tasapeli(ekan_siirto, tokan_siirto):
             self.tasapelit = self.tasapelit + 1
         elif self.eka_voittaa(ekan_siirto, tokan_siirto):
-            self.ekan_pisteet = self.eka_voittaa + 1
+            self.ekan_pisteet = self.ekan_pisteet + 1
         else:
             self.tokan_pisteet = self.tokan_pisteet + 1
 

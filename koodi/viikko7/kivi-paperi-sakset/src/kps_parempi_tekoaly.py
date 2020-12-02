@@ -1,15 +1,15 @@
 from tuomari import Tuomari
-from tekoaly import Tekoaly
+from tekoaly_parannettu import TekoalyParannettu
 
 
-class KPSTekoaly:
+class KPSParempiTekoaly:
     def __init__(self):
         self.lue = input
         self.kirjoita = print
 
     def pelaa(self):
         tuomari = Tuomari()
-        tekoaly = Tekoaly()
+        tekoaly = TekoalyParannettu(10)
 
         ekan_siirto = self.lue("Ensimmäisen pelaajan siirto: ")
         tokan_siirto = tekoaly.anna_siirto()
@@ -24,6 +24,7 @@ class KPSTekoaly:
             tokan_siirto = tekoaly.anna_siirto()
 
             self.kirjoita(f"Tietokone valitsi: {tokan_siirto}")
+            tekoaly.aseta_siirto(ekan_siirto)
 
         self.kirjoita("Kiitos!")
         self.kirjoita(tuomari)

@@ -12,10 +12,10 @@ class Pankki:
         return Pankki.__instanssi
 
     def __init__(self):
-        self.kirjanpito = Kirjanpito.get_instance()
+        self._kirjanpito = Kirjanpito.get_instance()
 
     def tilisiirto(self, nimi, viitenumero, tililta, tilille, summa):
-        self.kirjanpito.lisaa_tapahtuma(
+        self._kirjanpito.lisaa_tapahtuma(
             f"tilisiirto: tililtä {tililta} tilille {tilille} viite {viitenumero} summa {summa}e"
         )
 

@@ -14,13 +14,13 @@ class AuthenticationError(Exception):
 
 class UserService:
     def __init__(self, user_repository=default_user_repository):
-        self.user_repository = user_repository
+        self._user_repository = user_repository
 
     def check_credentials(self, username, password):
         if not username or not password:
             raise UserInputError("Username and password are required")
 
-        user = self.user_repository.find_by_username(username)
+        user = self._user_repository.find_by_username(username)
 
         if not user or user.password != password:
             raise AuthenticationError("Invalid username or password")
@@ -30,7 +30,7 @@ class UserService:
     def create_user(self, username, password, password_confirmation):
         self.validate(username, password, password_confirmation)
 
-        user = self.user_repository.create(
+        user = self._user_repository.create(
             User(username, password)
         )
 

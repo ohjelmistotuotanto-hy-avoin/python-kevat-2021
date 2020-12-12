@@ -3,10 +3,10 @@ from kirjanpito import kirjanpito as default_kirjanpito
 
 class Pankki:
     def __init__(self, kirjanpito=default_kirjanpito):
-        self.kirjanpito = kirjanpito
+        self._kirjanpito = kirjanpito
 
     def tilisiirto(self, nimi, viitenumero, tililta, tilille, summa):
-        self.kirjanpito.lisaa_tapahtuma(
+        self._kirjanpito.lisaa_tapahtuma(
             f"tilisiirto: tililtä {tililta} tilille {tilille} viite {viitenumero} summa {summa}e"
         )
 

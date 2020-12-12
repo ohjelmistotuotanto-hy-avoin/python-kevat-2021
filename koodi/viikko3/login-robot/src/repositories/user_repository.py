@@ -3,10 +3,10 @@ from entities.user import User
 
 class UserRepository:
     def __init__(self):
-        self.users = []
+        self._users = []
 
     def find_all(self):
-        return self.users
+        return self._users
 
     def find_by_username(self, username):
         users = self.find_all()
@@ -32,7 +32,7 @@ class UserRepository:
 
         users.append(user)
 
-        self.users = users
+        self._users = users
 
         return user
 
@@ -41,7 +41,7 @@ class UserRepository:
 
         users_without_id = filter(lambda user: user.id != user_id, users)
 
-        self.users = list(users_without_id)
+        self._users = list(users_without_id)
 
     def delete_all(self):
-        self.users = []
+        self._users = []

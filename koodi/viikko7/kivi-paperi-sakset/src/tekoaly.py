@@ -1,14 +1,14 @@
 class Tekoaly:
     def __init__(self):
-        self.siirto = 0
+        self._siirto = 0
 
     def anna_siirto(self):
-        self.siirto = self.siirto + 1
-        self.siirto = self.siirto % 3
+        self._siirto = self._siirto + 1
+        self._siirto = self._siirto % 3
 
-        if self.siirto == 0:
+        if self._siirto == 0:
             return "k"
-        elif self.siirto == 1:
+        elif self._siirto == 1:
             return "p"
         else:
             return "s"

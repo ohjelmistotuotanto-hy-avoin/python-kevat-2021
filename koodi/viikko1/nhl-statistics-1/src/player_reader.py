@@ -4,10 +4,10 @@ from player import Player
 
 class PlayerReader:
     def __init__(self, url):
-        self.url = url
+        self._url = url
 
     def get_players(self):
-        players_file = request.urlopen(self.url)
+        players_file = request.urlopen(self._url)
         players = []
 
         for line in players_file:

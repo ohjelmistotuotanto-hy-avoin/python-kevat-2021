@@ -3,12 +3,6 @@ class App:
         self.user_sevice = user_sevice
         self.io = io
 
-    def read_credentials(self):
-        username = self.io.read("Username: ")
-        password = self.io.read("Password: ")
-
-        return (username, password)
-
     def run(self):
         while True:
             command = self.io.read("Command (new or login): ")
@@ -17,7 +11,7 @@ class App:
                 break
 
             if command == "new":
-                (username, password) = self.read_credentials()
+                (username, password) = self._read_credentials()
 
                 try:
                     self.user_sevice.create_user(username, password)
@@ -25,10 +19,16 @@ class App:
                 except Exception as error:
                     self.io.write(str(error))
             elif command == "login":
-                (username, password) = self.read_credentials()
+                (username, password) = self._read_credentials()
 
                 try:
                     self.user_sevice.check_credentials(username, password)
                     self.io.write("Logged in")
                 except Exception as error:
                     self.io.write(str(error))
+
+    def _read_credentials(self):
+        username = self.io.read("Username: ")
+        password = self.io.read("Password: ")
+
+        return (username, password)

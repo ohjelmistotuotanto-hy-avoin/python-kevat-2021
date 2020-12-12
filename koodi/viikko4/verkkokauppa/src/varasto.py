@@ -4,12 +4,12 @@ from kirjanpito import kirjanpito as default_kirjanpito
 
 class Varasto:
     def __init__(self, kirjanpito=default_kirjanpito):
-        self.kirjanpito = kirjanpito
-        self.saldot = {}
-        self.alusta_tuotteet()
+        self._kirjanpito = kirjanpito
+        self._saldot = {}
+        self._alusta_tuotteet()
 
     def hae_tuote(self, id):
-        tuotteet = self.saldot.keys()
+        tuotteet = self._saldot.keys()
 
         for tuote in tuotteet:
             if tuote.id == id:
@@ -20,28 +20,28 @@ class Varasto:
     def saldo(self, id):
         tuote = self.hae_tuote(id)
 
-        return self.saldot[tuote]
+        return self._saldot[tuote]
 
     def ota_varastosta(self, tuote):
         saldo = self.saldo(tuote.id)
 
-        self.saldot[tuote] = saldo - 1
+        self._saldot[tuote] = saldo - 1
 
-        self.kirjanpito.lisaa_tapahtuma(f"otettiin varastosta {tuote}")
+        self._kirjanpito.lisaa_tapahtuma(f"otettiin varastosta {tuote}")
 
     def palauta_varastoon(self, tuote):
         saldo = self.saldo(tuote.id)
 
-        self.saldot[tuote] = saldo + 1
+        self._saldot[tuote] = saldo + 1
 
-        self.kirjanpito.lisaa_tapahtuma(f"palautettiin varastoon {tuote}")
+        self._kirjanpito.lisaa_tapahtuma(f"palautettiin varastoon {tuote}")
 
-    def alusta_tuotteet(self):
-        self.saldot[Tuote(1, "Koff Portteri", 3)] = 100
-        self.saldot[Tuote(2, "Fink Bräu I", 1)] = 25
-        self.saldot[Tuote(3, "Sierra Nevada Pale Ale", 5)] = 30
-        self.saldot[Tuote(4, "Mikkeller not just another Wit", 7)] = 40
-        self.saldot[Tuote(5, "Weihenstephaner Hefeweisse", 4)] = 15
+    def _alusta_tuotteet(self):
+        self._saldot[Tuote(1, "Koff Portteri", 3)] = 100
+        self._saldot[Tuote(2, "Fink Bräu I", 1)] = 25
+        self._saldot[Tuote(3, "Sierra Nevada Pale Ale", 5)] = 30
+        self._saldot[Tuote(4, "Mikkeller not just another Wit", 7)] = 40
+        self._saldot[Tuote(5, "Weihenstephaner Hefeweisse", 4)] = 15
 
 
 varasto = Varasto()

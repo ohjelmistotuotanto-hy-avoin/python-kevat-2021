@@ -10,5 +10,5 @@ class ProjectReader:
         content = request.urlopen(self._url).read().decode("utf-8")
         print(content)
 
-        # parsi TOML-formaatissa oleva merkkijono ja muodosta Project-olio sen tietojen perusteella
+        # deserialisoi TOML-formaatissa oleva merkkijono ja muodosta Project-olio sen tietojen perusteella
         return Project("Test name", "Test description", [], [])

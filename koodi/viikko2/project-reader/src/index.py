@@ -2,16 +2,9 @@ from project_reader import ProjectReader
 
 
 def main():
-    while True:
-        url = input("Project URL: ")
-
-        if not url:
-            break
-
-        reader = ProjectReader(url)
-
-        print("Project information:")
-        print(reader.get_project())
+    url = "https://raw.githubusercontent.com/ohjelmistotuotanto-hy-avoin/python-kevat-2021/main/koodi/viikko3/web-login-robot/pyproject.toml"
+    reader = ProjectReader(url)
+    print(reader.get_project())
 
 
 if __name__ == "__main__":

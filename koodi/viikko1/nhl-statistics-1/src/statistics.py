@@ -35,4 +35,17 @@ class Statistics:
             key=sort_by_points
         )
 
-        return sorted_players[:how_many]
+    def top_scorers(self, how_many):
+        sorted_players = sorted(
+            self._players,
+            reverse=True,
+            key=sort_by_points
+        )
+
+        result = []
+        i = 0
+        while i <= how_many:
+          result.append(sorted_players[i])
+          i += 1
+
+        return result

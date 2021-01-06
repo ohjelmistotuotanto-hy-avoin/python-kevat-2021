@@ -1,9 +1,6 @@
 from statistics import Statistics
 from player_reader import PlayerReader
-from matchers.and_matcher import And
-from matchers.has_at_least import HasAtLeast
-from matchers.plays_in import PlaysIn
-
+from matchers import And, HasAtLeast, PlaysIn
 
 def main():
     url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"

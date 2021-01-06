@@ -1,10 +1,10 @@
 from tkinter import Tk
 from kayttoliittyma import Kayttoliittyma
-from sovellus import Sovellus
+from sovelluslogiikka import Sovelluslogiikka
 
 
 def main():
-    sovellus = Sovellus()
+    sovellus = Sovelluslogiikka()
 
     window = Tk()
     window.title("Laskin")

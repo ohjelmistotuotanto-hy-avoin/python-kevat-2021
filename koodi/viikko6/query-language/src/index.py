@@ -6,7 +6,7 @@ from matchers.plays_in import PlaysIn
 
 
 def main():
-    url = "https://nhl27112019.herokuapp.com/players.txt"
+    url = "https://nhlstatisticsforohtu.herokuapp.com/players.txt"
     reader = PlayerReader(url)
     stats = Statistics(reader)
 

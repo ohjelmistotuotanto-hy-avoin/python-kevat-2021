@@ -10,3 +10,6 @@ class Sovelluslogiikka:
 
     def nollaa(self):
         self.tulos = 0
+
+    def aseta_arvo(self, arvo):
+        self.tulos = arvo

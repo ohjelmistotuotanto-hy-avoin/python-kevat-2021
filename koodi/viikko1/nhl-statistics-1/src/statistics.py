@@ -35,13 +35,6 @@ class Statistics:
             key=sort_by_points
         )
 
-    def top_scorers(self, how_many):
-        sorted_players = sorted(
-            self._players,
-            reverse=True,
-            key=sort_by_points
-        )
-
         result = []
         i = 0
         while i <= how_many:
